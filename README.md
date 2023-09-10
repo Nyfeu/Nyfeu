@@ -48,10 +48,3 @@
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="30"/>               
   </p>        
 <hr>
-
-
-
-
-
-
-![snake gif](https://github.com/Nyfeu/Nyfeu/blob/output/github-contribution-grid-snake.gif)
