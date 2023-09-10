@@ -1,5 +1,4 @@
 <h1 align="center">Olá! Eu sou André Maiolini </h1>
-<hr>
 <h3 align="center">Engenheiro Mecânico ⚙️ apaixonado por Computação 🖥️</h3>
 <hr>
 <br>
@@ -28,8 +27,7 @@
 <br>
 <hr>
 <h3 align="left">Linguagens de Programação:</h3>
-<hr>
-  <p>
+<p>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="30"/>        
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="30"/>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="30"/>
@@ -38,10 +36,9 @@
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original-wordmark.svg" width="30"/>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" width="30"/>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" width="30"/>     
-  </p>        
+  </p>  
 <hr>
 <h3 align="left">Tecnologias:</h3>
-<hr>
   <p>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" width="30"/>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="30"/>
