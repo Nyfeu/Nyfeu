@@ -20,9 +20,7 @@
 <br>
 <h3 align="left">Sobre mim:</h3>
 <ul>
-  <li>Atualmente sou estudante no <b>Instituto Mauá de Tecnologia</b> (IMT), do curso de Engenharia Mecânica.</li>
-  <li>Tenho uma paixão por desafios relacionados à computação e estou envolvido em pesquisas na área de Processos de Fabricação.</li>
-  <li>Também desenvolvo projetos de Engenharia Assistida por Computador (CAE).</li>
+  <li>Olá, sou André Maiolini, estudante de Engenharia Mecânica no Instituto Mauá de Tecnologia (IMT). Tenho paixão por entender como as coisas funcionam e desvendar novas tecnologias e desafios. Estou envolvido em pesquisas científicas para compreender os desafios da indústria, com foco na manufatura e em engenharia assistida por computador (CAE). Minha busca por conhecimento é contínua e busco aplicá-lo de forma prática. Dedico meu tempo livre ao aprimoramento de habilidades, incluindo programação, para ampliar minha compreensão do mundo. Meu compromisso é entregar resultados de qualidade e estou aberto a oportunidades que impulsionem meu crescimento e desenvolvimento contínuo.</li>
 </ul>
 <br>
 <hr>
