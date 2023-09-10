@@ -1,4 +1,4 @@
-<h1 align="center">Olá! Eu sou André Maiolini ✌️</h1>
+<h1 align="center">Olá! Eu sou André Maiolini 🖖</h1>
 <h3 align="center">Engenheiro Mecânico ⚙️ apaixonado por Computação 🖥️</h3>
 <hr>
 <br>
