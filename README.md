@@ -20,7 +20,7 @@
 <br>
 <h3 align="left">Sobre mim:</h3>
 <ul>
-  <li>Olá, sou André Maiolini, engenheiro mecânico formado pelo Instituto Mauá de Tecnologia (IMT). Tenho paixão por entender como as coisas funcionam e desvendar novas tecnologias e desafios. Estou envolvido em pesquisas científicas para compreender os desafios da indústria, com foco na manufatura e em engenharia assistida por computador (CAE). Minha busca por conhecimento é contínua e busco aplicá-lo de forma prática. Dedico meu tempo livre ao aprimoramento de habilidades, incluindo programação, para ampliar minha compreensão do mundo. Meu compromisso é entregar resultados de qualidade e estou aberto a oportunidades que impulsionem meu crescimento e desenvolvimento contínuo.</li>
+  <li>Olá, sou André Maiolini, Engenheiro Mecânico formado pelo Instituto Mauá de Tecnologia (IMT) e atualmente estou cursando Engenharia de Computação na mesma instituição. Tenho paixão por entender como as coisas funcionam e desvendar novas tecnologias e desafios. Estive envolvido em pesquisas científicas para compreender os desafios da indústria, com foco na manufatura e em engenharia assistida por computador (CAE). Minha busca por conhecimento é contínua e busco aplicá-lo de forma prática. Dedico meu tempo livre ao aprimoramento de habilidades, incluindo programação, para ampliar minha compreensão do mundo. Meu compromisso é entregar resultados de qualidade e estou aberto a oportunidades que impulsionem meu crescimento e desenvolvimento contínuo.</li>
 </ul>
 <br>
 <hr>
