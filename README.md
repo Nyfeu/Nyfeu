@@ -20,7 +20,11 @@
 <br>
 <h3 align="left">Sobre mim:</h3>
 <ul>
-  <li>Olá, sou André Maiolini, Engenheiro Mecânico formado pelo Instituto Mauá de Tecnologia (IMT) e atualmente estou cursando Engenharia de Computação na mesma instituição. Tenho paixão por entender como as coisas funcionam e desvendar novas tecnologias e desafios. Estive envolvido em pesquisas científicas para compreender os desafios da indústria, com foco na manufatura e em engenharia assistida por computador (CAE). Minha busca por conhecimento é contínua e busco aplicá-lo de forma prática. Dedico meu tempo livre ao aprimoramento de habilidades, incluindo programação, para ampliar minha compreensão do mundo. Meu compromisso é entregar resultados de qualidade e estou aberto a oportunidades que impulsionem meu crescimento e desenvolvimento contínuo.</li>
+  <li><strong>Engenheiro Mecânico</strong> formado pelo <strong>Instituto Mauá de Tecnologia (IMT)</strong>, com destaque acadêmico como melhor aluno da turma, e atualmente graduando em <strong>Engenharia de Computação</strong> pela mesma instituição, onde é bolsista por desempenho acadêmico.</li>
+
+<li>Minha trajetória é marcada pelo interesse em compreender sistemas em diferentes níveis de abstração, desde o domínio físico e da manufatura até a lógica e a arquitetura de sistemas computacionais. Ao longo dessa transição, desenvolvi uma visão analítica e integrada, voltada à resolução de problemas complexos.</li>
+
+<li>Tenho interesse em desafios que exijam raciocínio estruturado, consistência técnica e aprendizado contínuo, buscando sempre aplicar fundamentos de engenharia de forma prática.</li>
 </ul>
 <br>
 <hr>
@@ -36,7 +40,5 @@
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="30"/>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="30"/>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MatLab" width="30"/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" width="30"/>
-    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="30" height="30"/>
   </p>  
 <hr>
