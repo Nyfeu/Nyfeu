@@ -1,44 +1,45 @@
 <h1 align="center">Olá! Eu sou André Maiolini 🖖</h1>
-<h3 align="center">Engenheiro Mecânico ⚙️ apaixonado por Computação 🖥️</h3>
-<hr>
-<br>
-<h3 align="left">Entre em contato:</h3>
-<ul>
-  <li>
-    LinkedIn: 
-    <a href="https://www.linkedin.com/in/andremaiolini" target="_blank"> 
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="15"/>
-      André Maiolini
-    </a>
-  </li>
-  <li>
-    E-mail ✉️: <a href="https://linkedin.com/in/https://www.linkedin.com/in/andremaiolini/" target="_blank">
-      andre.maiolini@hotmail.com
-    </a>
-  </li>
-</ul>
-<br>
-<h3 align="left">Sobre mim:</h3>
-<ul>
-  <li><strong>Engenheiro Mecânico</strong> formado pelo <strong>Instituto Mauá de Tecnologia (IMT)</strong>, com destaque acadêmico como melhor aluno da turma, e atualmente graduando em <strong>Engenharia de Computação</strong> pela mesma instituição, onde é bolsista por desempenho acadêmico.</li>
+<h3 align="center">Engenheiro Mecânico ⚙️ | Graduando em Engenharia de Computação 🖥️</h3>
 
-<li>Minha trajetória é marcada pelo interesse em compreender sistemas em diferentes níveis de abstração, desde o domínio físico e da manufatura até a lógica e a arquitetura de sistemas computacionais. Ao longo dessa transição, desenvolvi uma visão analítica e integrada, voltada à resolução de problemas complexos.</li>
+<p align="center">
+  <a href="https://www.linkedin.com/in/andremaiolini" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="mailto:andre.maiolini@hotmail.com">
+    <img src="https://img.shields.io/badge/-Email-%23333?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+</p>
 
-<li>Tenho interesse em desafios que exijam raciocínio estruturado, consistência técnica e aprendizado contínuo, buscando sempre aplicar fundamentos de engenharia de forma prática.</li>
-</ul>
-<br>
-<hr>
-<h3 align="left">Tecnologias e Linguagens:</h3>
-<p>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" width="30"/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width="30"/>
-    <img src="https://cdn6.aptoide.com/imgs/6/3/1/631fbab7ee9a98187750a0e908f4e01f_icon.png" alt="VHDL" height="30"/>
-    <img src="https://rustacean.net/assets/rustacean-flat-happy.png" alt="Rust" height="30"/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original-wordmark.svg" alt="Arduino" width="30"/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="30"/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="30"/> 
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="30"/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="30"/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MatLab" width="30"/>
-  </p>  
-<hr>
+---
+
+### Sobre mim
+
+Sou formado em **Engenharia Mecânica** pelo **Instituto Mauá de Tecnologia (IMT)** (com distinção como melhor aluno da turma) e atualmente estou cursando **Engenharia de Computação** na mesma instituição. 
+
+Minha trajetória transita entre a modelagem de sistemas físicos e o desenvolvimento de arquiteturas computacionais. Tenho focado minha atuação e pesquisa em:
+- 🔭 **Controle e Sistemas Dinâmicos:** Malhas de controle, filtros digitais e sistemas de tempo real.
+- 🔬 **Sistemas Embarcados e Hardware:** Desenvolvimento de firmware (FreeRTOS, ESP32) e exploração microarquitetural (RISC-V, FPGA, VHDL/SystemVerilog).
+- 🧩 **Modelagem Numérica:** Método dos Elementos Finitos e validação experimental.
+
+Busco desafios que exijam raciocínio estruturado, aproximando modelagem, computação e implementação física para resolver problemas complexos.
+
+---
+
+### Tecnologias e Ferramentas
+
+**Hardware Digital & Embarcados:**
+<p align="left">
+  <img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C" />
+  <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
+  <img src="https://img.shields.io/badge/Rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white" alt="Rust" />
+  <img src="https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white" alt="Arduino" />
+  <img src="https://img.shields.io/badge/FreeRTOS-%2320232a.svg?style=for-the-badge&logo=freertos&logoColor=white" alt="FreeRTOS" />
+</p>
+
+**Software & Computação Científica:**
+<p align="left">
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
+  <img src="https://img.shields.io/badge/MATLAB-%23D00000.svg?style=for-the-badge&logo=mathworks&logoColor=white" alt="MATLAB" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+  <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25?style=for-the-badge&logo=GNU%20Bash&logoColor=white" alt="Bash" />
+</p>
