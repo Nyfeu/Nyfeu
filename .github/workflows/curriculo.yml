@@ -1,0 +1,90 @@
+name: Currículo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "curriculo/**"
+      - ".github/workflows/curriculo.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar XeLaTeX e fontes
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-xetex texlive-latex-recommended texlive-latex-extra \
+            texlive-pictures texlive-fonts-recommended latexmk \
+            fonts-crosextra-carlito fontconfig
+          mkdir -p ~/.local/share/fonts
+          for w in Light Medium; do
+            curl -fsSL -o ~/.local/share/fonts/Poppins-$w.ttf \
+              https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-$w.ttf
+          done
+          fc-cache -f
+
+      - name: Compilar currículos
+        working-directory: curriculo
+        run: |
+          latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=../site cv_maiolini.tex
+          latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=../site cv_maiolini_ats.tex
+
+      - name: Montar página
+        run: |
+          cd site
+          find . -type f ! -name '*.pdf' -delete
+          cat > index.html <<'EOF'
+          <!doctype html>
+          <html lang="pt-BR">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Currículo · André Maiolini</title>
+            <style>
+              body { font-family: system-ui, sans-serif; max-width: 34rem; margin: 4rem auto; padding: 0 1rem; color: #1a1a1a; background: #fff; }
+              a { color: #16181a; }
+              li { margin: .5rem 0; }
+            </style>
+          </head>
+          <body>
+            <h1>André Maiolini — Currículo</h1>
+            <ul>
+              <li><a href="cv_maiolini.pdf">Currículo (PDF)</a></li>
+              <li><a href="cv_maiolini_ats.pdf">Currículo — versão ATS (PDF)</a></li>
+            </ul>
+          </body>
+          </html>
+          EOF
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: curriculo
+          path: site/*.pdf
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

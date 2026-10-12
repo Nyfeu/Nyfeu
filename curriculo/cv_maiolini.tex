@@ -1,0 +1,308 @@
+% =====================================================================
+%  Currículo — André Solano Ferreira Rodrigues Maiolini
+%  Compilar com:  xelatex cv_maiolini.tex
+% =====================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage[a4paper,top=1.2cm,bottom=0.85cm,left=1.15cm,right=1.15cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{paracol}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usepackage{needspace}
+\usepackage{url}
+\urlstyle{same}
+\sloppy
+\setlength{\emergencystretch}{2em}
+
+% ---------- paleta (neutra, sem cor) --------------------------------
+\definecolor{banda}{HTML}{16181A}   % faixa do cabeçalho
+\definecolor{tinta}{HTML}{1A1A1A}   % texto forte
+\definecolor{corpo}{HTML}{333333}   % texto corrido
+\definecolor{meio}{HTML}{4A4A4A}    % subtítulos
+\definecolor{claro}{HTML}{6E6E6E}   % datas e metadados
+\definecolor{filete}{HTML}{C8C8C8}  % linhas
+\definecolor{tenue}{HTML}{E4E4E4}   % separadores finos
+
+% ---------- tipografia ----------------------------------------------
+\setmainfont{Carlito}[
+  BoldFont={Carlito Bold}, ItalicFont={Carlito Italic}]
+\newfontfamily\display{Poppins}[
+  UprightFont={Poppins Light}, BoldFont={Poppins Medium}]
+\newfontfamily\displaymed{Poppins}[UprightFont={Poppins Medium}]
+
+\setlength{\parindent}{0pt}
+\raggedright
+\linespread{1.035}
+\pagestyle{empty}
+
+% ---------- utilitários ---------------------------------------------
+% título de seção: caixa alta, entreletras largo, filete abaixo
+\newcommand{\secao}[1]{%
+  \Needspace*{6\baselineskip}%
+  \vspace{4pt}%
+  {\display\fontsize{9.6}{9.6}\selectfont\color{tinta}%
+   \addfontfeature{LetterSpace=13}\MakeUppercase{#1}}\par
+  \vspace{1.8pt}%
+  {\color{filete}\hrule height 0.5pt}%
+  \nopagebreak\vspace{6.5pt}%
+  \nopagebreak%
+}
+
+% cargo / título de entrada
+\newcommand{\cargo}[1]{{\fontsize{9.5}{11.0}\selectfont\bfseries\color{tinta}#1}\par}
+% instituição
+\newcommand{\org}[1]{{\fontsize{8.7}{10.0}\selectfont\bfseries\color{meio}#1}\par}
+% período e local
+\newcommand{\periodo}[1]{{\fontsize{8.1}{9.4}\selectfont\color{claro}#1}\par\vspace{1pt}}
+
+% lista de bullets compacta
+\newlist{itens}{itemize}{1}
+\setlist[itens]{leftmargin=9pt,labelsep=4pt,topsep=0.8pt,itemsep=1.1pt,
+  parsep=0pt,label={\color{claro}\scriptsize$\bullet$},
+  before=\fontsize{8.5}{10.7}\selectfont\color{corpo}}
+
+% entrada de publicação / certificação
+\newcommand{\pub}[2]{%
+  \vspace{2pt}
+  {\fontsize{8.6}{10.4}\selectfont\bfseries\color{tinta}#1}\par
+  \vspace{1pt}
+  {\fontsize{8.0}{9.6}\selectfont\color{claro}#2}\par
+  \vspace{5pt}{\color{tenue}\hrule height 0.4pt}\vspace{5pt}}
+
+\newcommand{\espaco}{\vspace{5pt}}
+
+% bloco cargo+organização+período indivisível
+\newcommand{\bloco}[3]{\par\noindent\begin{minipage}{\linewidth}%
+  \cargo{#1}\org{#2}\periodo{#3}\end{minipage}\nopagebreak\vspace{1.5pt}}
+
+% =====================================================================
+\begin{document}
+
+% ---------- FAIXA ESCURA DO CABEÇALHO (sangra até as bordas) ---------
+% \begin{tikzpicture}[remember picture,overlay]
+%   \fill[banda] (current page.north west) rectangle
+%                ([yshift=-4.85cm]current page.north east);
+% \end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  % 1. Fundo da faixa
+  \fill[banda] (current page.north west) rectangle
+               ([yshift=-4.85cm]current page.north east);
+
+  % 2. Diagrama do Oscilador Harmônico (Invertido e Redimensionado)
+  % Ajustes: scale=0.85 para reduzir tudo, transform shape para encolher a fonte junto
+  \begin{scope}[shift={(current page.north east)}, xshift=-6.1cm, yshift=-2.5cm, scale=0.7, transform shape]
+    
+    % Seta do Grau de Liberdade (x(t)) no centro da massa apontando p/ esquerda
+    \draw[tenue, thick, ->, >=stealth] (1.3, 0.5) -- (0.1, 0.5) node[left, xshift=-2pt] {$x(t)$};
+    
+    % Massa (bloco) - Centralizado em y=0.5
+    \draw[tenue, thick] (1.3, -0.1) rectangle (2.7, 1.1);
+    \node[tenue] at (2.0, 0.5) {$m$};
+    
+    % Mola em y=0.9
+    \draw[tenue, thick] (5.5, 0.9) -- (5.0, 0.9)
+      -- ++(-0.15, 0.2) -- ++(-0.3, -0.4) -- ++(-0.3, 0.4) 
+      -- ++(-0.3, -0.4) -- ++(-0.3, 0.4) -- ++(-0.3, -0.4) 
+      -- ++(-0.15, 0.2) -- (2.7, 0.9);
+    
+    % Amortecedor em y=0.1
+    % Pistão (conectado na parede à direita)
+    \draw[tenue, thick] (5.5, 0.1) -- (4.0, 0.1);
+    \draw[tenue, thick] (4.0, -0.05) -- (4.0, 0.25);
+    % Cilindro (conectado na massa à esquerda)
+    \draw[tenue, thick] (2.7, 0.1) -- (3.7, 0.1);
+    \draw[tenue, thick] (3.7, 0.3) -- (3.7, -0.1);
+    \draw[tenue, thick] (3.7, 0.3) -- (4.3, 0.3);
+    \draw[tenue, thick] (3.7, -0.1) -- (4.3, -0.1);
+    
+    % Parede (apenas vertical, na direita)
+    \draw[tenue, thick] (5.5,-0.4) -- (5.5,1.4);
+    
+    % Hachuras da Parede (viradas para fora)
+    \foreach \y in {-0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2} {
+      \draw[tenue, very thin] (5.5,\y) -- (5.7, \y+0.2);
+    }
+    
+  \end{scope}
+\end{tikzpicture}
+
+\vspace*{0.20cm}
+{\display\fontsize{23}{23}\selectfont\color{white}%
+ \addfontfeature{LetterSpace=15}ANDRÉ MAIOLINI}\par
+\vspace{6pt}
+{\color{claro}\hrule height 1pt width 7.2cm}
+\vspace{7pt}
+{\display\fontsize{9.4}{9.4}\selectfont\color{filete}%
+ \addfontfeature{LetterSpace=18}CONTROLE E SISTEMAS DINÂMICOS}\par
+\vspace{8pt}
+{\fontsize{8.4}{8.4}\selectfont\color{filete}%
+ (11) 97120-8137 \quad·\quad \href{mailto:andre.maiolini@hotmail.com}{andre.maiolini@hotmail.com} \quad·\quad
+ \href{https://linkedin.com/in/andremaiolini}{linkedin.com/in/andremaiolini} \quad·\quad \href{https://github.com/Nyfeu}{github.com/Nyfeu} \quad·\quad Mooca, São Paulo -- SP}\par
+
+\vspace{1.05cm}
+
+% ---------- FORMAÇÃO (largura total) --------------------------------
+\secao{Formação Acadêmica e Distinções}
+
+{\fontsize{9.6}{11.4}\selectfont\bfseries\color{tinta}Engenharia de Computação}%
+{\fontsize{8.8}{11.4}\selectfont\color{meio}\quad Instituto Mauá de Tecnologia · 02/2024 – 12/2026 (em curso)}\par
+\vspace{1.5pt}
+\begin{itens}
+  \item Bolsa Melhor Aluno 2025 (IMT, 2026) — maior Coeficiente de Rendimento entre os alunos da 4\textordfeminine{} série de Engenharia, com bolsa integral de 100\%.
+\end{itens}
+\vspace{4pt}
+
+{\fontsize{9.6}{11.4}\selectfont\bfseries\color{tinta}Engenharia Mecânica}%
+{\fontsize{8.8}{11.4}\selectfont\color{meio}\quad Instituto Mauá de Tecnologia · 02/2019 – 12/2023}\par
+\vspace{1.5pt}
+\begin{itens}
+  \item Melhor Aluno da Turma de 2023 (IMT, 2024) e 27\textordmasculine{} Prêmio CREA-SP de Formação Profissional (CREA-SP, 2024).
+\end{itens}
+
+\vspace{4pt}
+
+% ---------- DUAS COLUNAS --------------------------------------------
+\columnratio{0.615}
+\setlength{\columnsep}{0.72cm}
+\begin{paracol}{2}
+
+% ============ COLUNA ESQUERDA =======================================
+\secao{Habilidades}
+
+{\fontsize{8.5}{11.0}\selectfont\color{corpo}
+{\bfseries\color{tinta}Controle e sistemas dinâmicos}\quad Malhas de controle embarcadas · Filtros digitais · Sistemas de tempo real\par
+\vspace{2.5pt}
+{\bfseries\color{tinta}Modelagem numérica e experimental}\quad Método dos Elementos Finitos · Ansys Mechanical · Análise Modal · DoE e ANOVA\par
+\vspace{2.5pt}
+{\bfseries\color{tinta}Hardware digital e embarcados}\quad VHDL · SystemVerilog · FPGA (Xilinx Vivado) · ESP32 · FreeRTOS · Hardware-in-the-Loop\par
+\vspace{2.5pt}
+{\bfseries\color{tinta}Programação}\quad MATLAB · Simulink · C · C++ · Python · Git · Linux\par}
+
+\espaco
+\secao{Experiência}
+
+\bloco{Assistente de Coordenação}{Instituto Mauá de Tecnologia}{02/2026 – atual · São Caetano do Sul, SP}
+\begin{itens}
+  \item Apoio técnico e didático em Arquitetura e Organização de Computadores e orientação de projetos de graduação, incluindo desenvolvimento de firmware e hardware para dispositivos IoT.
+\end{itens}
+
+\vspace{7pt}
+\bloco{Estagiário de Engenharia de Sistemas Embarcados}{Intelicity}{02/2025 – 01/2026 · São Paulo, SP}
+\begin{itens}
+  \item Desenvolvimento integral de plataforma automatizada de posicionamento angular em dois eixos — CAD, fabricação aditiva, eletrônica, firmware e aplicativo de operação — com posicionamento em malha fechada por encoders magnéticos absolutos. Empregada como referência angular na calibração de acelerômetros MEMS, com resultados publicados no COBRAE/GEOSUL 2025.
+  \item Firmware em C para ESP32 e MSP430 sobre FreeRTOS, com filtros digitais aplicados à cadeia de aquisição de sinais dos sensores.
+  \item Dashboards em Python para bancada de testes e aplicativo em Flutter para operação.
+\end{itens}
+
+\vspace{7pt}
+\bloco{Aluno pesquisador — Iniciação Científica}{Instituto Mauá de Tecnologia}{02/2022 – 01/2024}
+\begin{itens}
+
+\item Modelagem termomecânica da fusão seletiva a laser (SLM/PBF-L) de componentes em Ti6Al4V por Elementos Finitos, utilizando o \textit{MSC Simufact}, sob planejamento fatorial e ANOVA, com validação experimental inferior a 4,5\% para distorções térmicas e a 1\% para tensões residuais medidas por difratometria de raios-X.
+
+\item Caracterização experimental de ligas refratárias (WC e NbC com Co e Ni) para manufatura aditiva por PBF-L, incluindo análises por Microscopia Eletrônica de Varredura (MEV) e levantamento experimental de curvas de escoabilidade a seco.
+
+\end{itens}
+
+\vspace{7pt}
+\bloco{Monitoria e aulas particulares}{Instituto Mauá de Tecnologia e autônomo}{02/2020 – 12/2023}
+\begin{itens}
+  \item Aulas particulares de Mecânica Vibratória e Controle, Resistência dos Materiais e Cálculo Diferencial e Integral I e II.
+  \item Monitorias de Resistência dos Materiais e de Cálculo I, com elaboração de materiais didáticos complementares.
+\end{itens}
+
+\espaco
+\secao{Projetos}
+
+\bloco{SuperNova-RV: exploração microarquitetural de núcleos RISC-V}{Projeto pessoal}{2026 – em andamento}
+\begin{itens}
+  \item Núcleo RV32I em SystemVerilog, de single-cycle a pipeline de cinco estágios com tratamento de hazards, com métricas de CPI/IPC e verificação automatizada em CI.
+\end{itens}
+
+\vspace{7pt}
+\bloco{Plataforma didática: SoC RISC-V com aceleração neural em FPGA}{Trabalho de conclusão de curso – Instituto Mauá de Tecnologia}{2025 – 2026}
+\begin{itens}
+  \item Co-projeto de hardware/software de um sistema-em-chip em VHDL-2008, validado em FPGA Nexys 4: núcleo RV32I multiciclo, acelerador em arranjo sistólico, DMA e interconexão crossbar.
+  \item Caracterização do gargalo de memória: vazão sustentada de 5,19 MACs/ciclo contra 16 teóricos, com 67,6\% de ociosidade; o DMA elevou a eficiência de movimentação de dados em 31,01x.
+  \item Validação em Hardware-in-the-Loop: host em Python treina e quantiza a rede, transmite os pesos por UART a 921.600 bps e recebe da FPGA os resultados de inferência e os contadores de desempenho.
+\end{itens}
+
+\vspace{7pt}
+\bloco{Otimização de rotor de misturador de alto cisalhamento}{Parceria SEMCO e Instituto Mauá de Tecnologia}{02/2023 – 06/2023}
+\begin{itens}
+  \item Primeira colocação no desafio de otimização da geometria do rotor. Estudo paramétrico com cerca de 20 simulações em Ansys Fluent, com múltiplos referenciais móveis (MRF) e turbulência k-$\varepsilon$ realizable, variando número, inclinação e altura das pás.
+  \item Verificação da geometria selecionada por interação fluido-estrutura e análise modal: excitação de 56,7 Hz do rotor confrontada com os modos naturais da estrutura.
+\end{itens}
+
+% ============ COLUNA DIREITA ========================================
+\switchcolumn
+
+\secao{Perfil}
+{\fontsize{8.5}{11.0}\selectfont\color{corpo}
+Engenheiro Mecânico pelo Instituto Mauá de Tecnologia e formando em Engenharia de Computação pela mesma instituição.\par
+\vspace{4pt}
+Minha formação transita entre a modelagem de sistemas físicos — com ênfase em elementos finitos, dinâmica e vibrações — e o desenvolvimento de hardware digital e sistemas embarcados. Iniciação científica, estágio e trabalho de conclusão seguem uma mesma abordagem: confrontar o modelo com resultados experimentais.\par
+\vspace{4pt}
+Busco atuar no desenvolvimento de sistemas de controle e sistemas dinâmicos, aproximando modelagem, computação e implementação embarcada em aplicações de tempo real.\par}
+
+\espaco
+\secao{Idiomas}
+
+\newcommand{\idioma}[3]{%
+  \makebox[4.7em][l]{\fontsize{8.5}{11}\selectfont\bfseries\color{tinta}#1}%
+  \makebox[6.2em][l]{\fontsize{8.5}{11}\selectfont\color{corpo}#2}%
+  \hfill\makebox[3.9em][r]{\fontsize{7}{7}\selectfont#3}\par\vspace{3pt}}
+
+\newcommand{\cheio}{{\color{tinta}$\bullet$}}
+\newcommand{\vazio}{{\color{filete}$\bullet$}}
+
+\idioma{Português}{Nativo}{\cheio\cheio\cheio\cheio\cheio}
+\idioma{Inglês}{Intermediário}{\cheio\cheio\cheio\vazio\vazio}
+
+\espaco
+\secao{Publicações}
+
+\pub{Influência dos nanofluidos na tensão residual do aço AISI 316L na manufatura híbrida}%
+{CONEM 2024 · ABCM · DOI \url{10.26678/abcm.conem2024.con24-0187}}
+
+\pub{Numerical and Experimental Analysis of the Influence of Manufacturing Parameters in Additive Manufacturing SLM-PBF on Residual Stress and Thermal Distortion in Parts of Titanium Alloy Ti6Al4V}%
+{Springer · Lecture Notes in Mechanical Engineering · 2024 · DOI \url{10.1007/978-3-031-58006-2\_15}}
+
+\pub{Towards the Flowability and Spreadability of Cemented Carbides and Cermet Powders for Additive Manufacturing: Experimental and Numerical Approach -- Part 1}%
+{COBEM 2023 · ABCM · DOI \url{10.26678/ABCM.COBEM2023.COB2023-0100}}
+
+\pub{Análise numérica e experimental da influência dos parâmetros de fabricação em manufatura aditiva SLM-PBF nas tensões residuais e distorções térmicas em peças de Ti6Al4V}%
+{COBEF 2023 · ABCM · DOI \url{10.26678/ABCM.COBEF2023.COF23-0113}}
+
+\pub{Uso de estratégias ativas no ensino de Método dos Elementos Finitos no curso de Engenharia Mecânica}%
+{COBENGE 2022 · ABENGE · DOI \url{10.37702/2175-957X.COBENGE.2022.3795}}
+
+\espaco
+\secao{Certificações}
+
+{\fontsize{8.0}{9.6}\selectfont\color{claro}Controle de sistemas — MathWorks}\par
+\vspace{3pt}
+\pub{Control System Design with MATLAB and Simulink}{2026}
+
+\vspace{2pt}
+{\fontsize{8.0}{9.6}\selectfont\color{claro}Dinâmica e simulação estrutural — Instituto ESSS}\par
+\vspace{3pt}
+\pub{Análise Dinâmica com Ansys}{2024}
+\pub{Análise Não-Linear com Ansys}{2023}
+
+\vspace{2pt}
+{\fontsize{8.0}{9.6}\selectfont\color{claro}Programação e sistemas embarcados}\par
+\vspace{3pt}
+\pub{Academia ESP32 Profissional}{Embarcados · 2026}
+\pub{Formação Linguagem C e C++}{Alura · 2023}
+\pub{Formação Linguagem Rust}{Alura · 2023}
+\pub{MATLAB: do básico ao avançado}{Udemy · 2022}
+
+\end{paracol}
+\end{document}

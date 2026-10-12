@@ -1,0 +1,265 @@
+% =====================================================================
+%  Currículo — versão ATS (Applicant Tracking System)
+%  André Solano Ferreira Rodrigues Maiolini
+%  Compilar com:  xelatex cv_maiolini_ats.tex
+%
+%  Diretrizes aplicadas:
+%   - coluna única, fluxo de leitura linear (sem paracol, sem minipage)
+%   - sem tikz, sem imagens, sem cor, sem caixas de texto
+%   - títulos de seção com nomenclatura padrão de mercado
+%   - contatos em linhas rotuladas, um por linha
+%   - sem modo matemático, sem entreletras artificial, sem ligaduras exóticas
+%   - fonte Carlito (métrica de Calibri), com mapeamento Unicode correto
+% =====================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage[a4paper,top=1.3cm,bottom=0.9cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\setmainfont{Carlito}[
+  BoldFont={Carlito Bold}, ItalicFont={Carlito Italic}]
+
+\setlength{\parindent}{0pt}
+\raggedright
+\linespread{1.0}
+\pagestyle{empty}
+
+\hypersetup{
+  pdftitle={Currículo - André Solano Ferreira Rodrigues Maiolini},
+  pdfauthor={André Solano Ferreira Rodrigues Maiolini},
+  pdfsubject={Controle e Sistemas Dinâmicos},
+  pdfkeywords={sistemas embarcados, controle, FPGA, VHDL, SystemVerilog,
+               elementos finitos, MATLAB, Simulink, C, C++, Python, RISC-V, FreeRTOS}
+}
+
+% ---------- seções -------------------------------------------------
+\titleformat{\section}
+  {\normalsize\bfseries\MakeUppercase}{}{0pt}{}[\vspace{2pt}\hrule height 0.6pt]
+\titlespacing*{\section}{0pt}{8pt}{5pt}
+
+% ---------- listas --------------------------------------------------
+\setlist[itemize]{leftmargin=13pt, labelsep=5pt, label=\textbullet,
+  topsep=2pt, itemsep=2pt, parsep=0pt}
+
+% ---------- cabeçalho de entrada -----------------------------------
+% #1 cargo/título  #2 organização  #3 período e local
+\newcommand{\entrada}[3]{%
+  \textbf{#1}\par
+  #2\par
+  #3\par
+  \vspace{2pt}}
+
+\newcommand{\espaco}{\vspace{7pt}}
+
+% =====================================================================
+\begin{document}
+
+% ---------- IDENTIFICAÇÃO E CONTATO ---------------------------------
+{\LARGE\bfseries André Solano Ferreira Rodrigues Maiolini}\par
+\vspace{3pt}
+{\large Engenheiro | Controle e Sistemas Dinâmicos}\par
+\vspace{7pt}
+
+Telefone: (11) 97120-8137\par
+E-mail: \href{mailto:andre.maiolini@hotmail.com}{andre.maiolini@hotmail.com}\par
+LinkedIn: \href{https://linkedin.com/in/andremaiolini}{linkedin.com/in/andremaiolini}\par
+GitHub: \href{https://github.com/Nyfeu}{github.com/Nyfeu}\par
+Localização: Mooca, São Paulo - SP, Brasil\par
+
+% ---------- RESUMO --------------------------------------------------
+\section{Resumo Profissional}
+
+Engenheiro Mecânico pelo Instituto Mauá de Tecnologia e formando em Engenharia
+de Computação pela mesma instituição. Atuação entre a modelagem de sistemas
+físicos - com ênfase em elementos finitos, dinâmica e vibrações - e o
+desenvolvimento de hardware digital e sistemas embarcados. Iniciação
+científica, estágio e trabalho de conclusão seguem a mesma abordagem:
+confrontar o modelo com resultados experimentais. Busco atuar no
+desenvolvimento de sistemas de controle e sistemas dinâmicos, aproximando
+modelagem, computação e implementação embarcada em aplicações de tempo real.
+
+% ---------- COMPETÊNCIAS --------------------------------------------
+\section{Competências Técnicas}
+
+\textbf{Controle e sistemas dinâmicos:} malhas de controle embarcadas, filtros
+digitais, sistemas de tempo real, dinâmica e vibrações.\par
+\vspace{3pt}
+\textbf{Modelagem numérica e experimental:} Método dos Elementos Finitos
+(FEM/FEA), Ansys Mechanical, Ansys Fluent (CFD), MSC Simufact, planejamento de
+experimentos (DoE), ANOVA, análise modal.\par
+\vspace{3pt}
+\textbf{Hardware digital e sistemas embarcados:} VHDL, SystemVerilog, FPGA
+(Xilinx Vivado, Nexys 4), ESP32, MSP430, FreeRTOS, RISC-V, UART, DMA,
+Hardware-in-the-Loop (HIL).\par
+\vspace{3pt}
+\textbf{Programação e ferramentas:} MATLAB, Simulink, C, C++, Python, Rust, Flutter, Git,
+Linux, integração contínua (CI).\par
+
+% ---------- IDIOMAS -------------------------------------------------
+\section{Idiomas}
+
+Português: nativo.\par
+Inglês: intermediário.\par
+
+% ---------- EXPERIÊNCIA ---------------------------------------------
+\section{Experiência Profissional}
+
+\entrada{Assistente de Coordenação}
+        {Instituto Mauá de Tecnologia}
+        {02/2026 - atual | São Caetano do Sul, SP}
+\begin{itemize}
+  \item Apoio técnico e didático em Arquitetura e Organização de Computadores e
+        orientação de projetos de graduação, incluindo desenvolvimento de
+        firmware e hardware para dispositivos IoT.
+\end{itemize}
+
+\espaco
+\entrada{Estagiário de Engenharia de Sistemas Embarcados}
+        {Intelicity}
+        {02/2025 - 01/2026 | São Paulo, SP}
+\begin{itemize}
+  \item Desenvolvimento integral de plataforma automatizada de posicionamento
+        angular em dois eixos (CAD, fabricação aditiva, eletrônica, firmware e
+        aplicativo de operação), com posicionamento em malha fechada por
+        encoders magnéticos absolutos. Empregada como referência angular na
+        calibração de acelerômetros MEMS, com resultados publicados no
+        COBRAE/GEOSUL 2025.
+  \item Firmware em C para ESP32 e MSP430 sobre FreeRTOS, com filtros digitais
+        aplicados à cadeia de aquisição de sinais dos sensores.
+  \item Dashboards em Python para bancada de testes e aplicativo em Flutter
+        para operação.
+\end{itemize}
+
+\espaco
+\entrada{Aluno Pesquisador - Iniciação Científica}
+        {Instituto Mauá de Tecnologia}
+        {02/2022 - 01/2024 | São Caetano do Sul, SP}
+\begin{itemize}
+  \item Modelagem termomecânica da fusão seletiva a laser (SLM/PBF-L) de
+        componentes em Ti6Al4V por Elementos Finitos, utilizando o MSC
+        Simufact, sob planejamento fatorial e ANOVA, com validação experimental
+        inferior a 4,5\% para distorções térmicas e a 1\% para tensões
+        residuais medidas por difratometria de raios-X.
+  \item Caracterização experimental de ligas refratárias (WC e NbC com Co e Ni)
+        para manufatura aditiva por PBF-L, incluindo análises por Microscopia
+        Eletrônica de Varredura (MEV) e levantamento experimental de curvas de
+        escoabilidade a seco.
+\end{itemize}
+
+\espaco
+\entrada{Monitor e Professor Particular}
+        {Instituto Mauá de Tecnologia e autônomo}
+        {02/2020 - 12/2023 | São Paulo, SP}
+\begin{itemize}
+  \item Aulas particulares de Mecânica Vibratória e Controle, Resistência dos
+        Materiais e Cálculo Diferencial e Integral I e II.
+  \item Monitorias de Resistência dos Materiais e de Cálculo I, com elaboração
+        de materiais didáticos complementares.
+\end{itemize}
+
+% ---------- FORMAÇÃO ------------------------------------------------
+\section{Formação Acadêmica}
+
+\entrada{Bacharelado em Engenharia de Computação}
+        {Instituto Mauá de Tecnologia}
+        {02/2024 - 12/2026 (em curso)}
+\begin{itemize}
+  \item Bolsa Melhor Aluno 2025 (IMT, 2026): maior Coeficiente de Rendimento
+        entre os alunos da quarta série de Engenharia, com bolsa integral de
+        100\%.
+\end{itemize}
+
+\espaco
+\entrada{Bacharelado em Engenharia Mecânica}
+        {Instituto Mauá de Tecnologia}
+        {02/2019 - 12/2023 (concluído)}
+\begin{itemize}
+  \item Melhor Aluno da Turma de 2023 (IMT, 2024).
+  \item 27º Prêmio CREA-SP de Formação Profissional (CREA-SP, 2024).
+\end{itemize}
+
+% ---------- PROJETOS ------------------------------------------------
+\section{Projetos Técnicos}
+
+\entrada{SuperNova-RV: exploração microarquitetural de núcleos RISC-V}
+        {Projeto pessoal}
+        {2026 - em andamento}
+\begin{itemize}
+  \item Núcleo RV32I em SystemVerilog, de single-cycle a pipeline de cinco
+        estágios com tratamento de hazards, com métricas de CPI/IPC e
+        verificação automatizada em CI.
+\end{itemize}
+
+\espaco
+\entrada{Plataforma didática: SoC RISC-V com aceleração neural em FPGA}
+        {Trabalho de Conclusão de Curso - Instituto Mauá de Tecnologia}
+        {2025 - 2026}
+\begin{itemize}
+  \item Coprojeto de hardware/software de um sistema-em-chip (SoC) em
+        VHDL-2008, validado em FPGA Nexys 4: núcleo RV32I multiciclo,
+        acelerador em arranjo sistólico, DMA e interconexão crossbar.
+  \item Caracterização do gargalo de memória: vazão sustentada de 5,19
+        MACs/ciclo contra 16 teóricos, com 67,6\% de ociosidade; o DMA elevou a
+        eficiência de movimentação de dados em 31,01 vezes.
+  \item Validação em Hardware-in-the-Loop: host em Python treina e quantiza a
+        rede, transmite os pesos por UART a 921.600 bps e recebe da FPGA os
+        resultados de inferência e os contadores de desempenho.
+\end{itemize}
+
+\espaco
+\entrada{Otimização de rotor de misturador de alto cisalhamento}
+        {Parceria SEMCO e Instituto Mauá de Tecnologia}
+        {02/2023 - 06/2023}
+\begin{itemize}
+  \item Primeira colocação no desafio de otimização da geometria do rotor.
+        Estudo paramétrico com cerca de 20 simulações em Ansys Fluent, com
+        múltiplos referenciais móveis (MRF) e turbulência k-epsilon realizable,
+        variando número, inclinação e altura das pás.
+  \item Verificação da geometria selecionada por interação fluido-estrutura e
+        análise modal: excitação de 56,7 Hz do rotor confrontada com os modos
+        naturais da estrutura.
+\end{itemize}
+
+% ---------- PUBLICAÇÕES ---------------------------------------------
+\section{Publicações}
+
+\begin{itemize}
+  \item \textbf{Influência dos nanofluidos na tensão residual do aço AISI 316L
+        na manufatura híbrida.} CONEM 2024, ABCM. DOI:
+        10.26678/abcm.conem2024.con24-0187.
+  \item \textbf{Numerical and Experimental Analysis of the Influence of
+        Manufacturing Parameters in Additive Manufacturing SLM-PBF on Residual
+        Stress and Thermal Distortion in Parts of Titanium Alloy Ti6Al4V.}
+        Springer, Lecture Notes in Mechanical Engineering, 2024. DOI:
+        10.1007/978-3-031-58006-2\_15.
+  \item \textbf{Towards the Flowability and Spreadability of Cemented
+        Carbides and Cermet Powders for Additive Manufacturing: Experimental
+        and Numerical Approach - Part 1.} COBEM 2023, ABCM. DOI:
+        10.26678/ABCM.COBEM2023.COB2023-0100.
+  \item \textbf{Análise numérica e experimental da influência dos parâmetros de
+        fabricação em manufatura aditiva SLM-PBF nas tensões residuais e
+        distorções térmicas em peças de Ti6Al4V.} COBEF 2023, ABCM. DOI:
+        10.26678/ABCM.COBEF2023.COF23-0113.
+  \item \textbf{Uso de estratégias ativas no ensino de Método dos Elementos
+        Finitos no curso de Engenharia Mecânica.} COBENGE 2022, ABENGE. DOI:
+        10.37702/2175-957X.COBENGE.2022.3795.
+\end{itemize}
+
+% ---------- CERTIFICAÇÕES -------------------------------------------
+\section{Certificações}
+
+\begin{itemize}
+  \item Control System Design with MATLAB and Simulink - MathWorks, 2026.
+  \item Academia ESP32 Profissional - Embarcados, 2026.
+  \item Análise Dinâmica com Ansys - Instituto ESSS, 2024.
+  \item Análise Não-Linear com Ansys - Instituto ESSS, 2023.
+  \item Formação Linguagem C e C++ - Alura, 2023.
+  \item Formação Linguagem Rust - Alura, 2023.
+  \item MATLAB: do básico ao avançado - Udemy, 2022.
+\end{itemize}
+
+\end{document}

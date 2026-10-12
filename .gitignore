@@ -1,0 +1,9 @@
+# LaTeX
+curriculo/*.aux
+curriculo/*.fdb_latexmk
+curriculo/*.fls
+curriculo/*.log
+curriculo/*.out
+curriculo/*.synctex.gz
+curriculo/*.xdv
+curriculo/*.pdf
