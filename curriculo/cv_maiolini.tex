@@ -228,9 +228,9 @@
 \vspace{7pt}
 \bloco{Plataforma didática: SoC RISC-V com aceleração neural em FPGA}{Trabalho de conclusão de curso – Instituto Mauá de Tecnologia}{2025 – 2026}
 \begin{itens}
-  \item Co-projeto de hardware/software de um sistema-em-chip em VHDL-2008, validado em FPGA Nexys 4: núcleo RV32I multiciclo, acelerador em arranjo sistólico, DMA e interconexão crossbar.
-  \item Caracterização do gargalo de memória: vazão sustentada de 5,19 MACs/ciclo contra 16 teóricos, com 67,6\% de ociosidade; o DMA elevou a eficiência de movimentação de dados em 31,01x.
-  \item Validação em Hardware-in-the-Loop: host em Python treina e quantiza a rede, transmite os pesos por UART a 921.600 bps e recebe da FPGA os resultados de inferência e os contadores de desempenho.
+  \item Co-projeto de hardware/software de um sistema-em-chip em VHDL-2008, validado em FPGA Nexys A7: núcleo RV32I multiciclo com Zicsr, NPU em arranjo sistólico 4×4, DMA e interconexão crossbar.
+  \item Mitigação do gargalo de memória com mecanismos de movimentação de dados na NPU (pesos locais, im2col em hardware, streaming, fusão de camadas e descritores de camada): de 4,6 para 12,2 MACs úteis/ciclo, de 16 teóricos, com speedup de até 7.477x sobre a CPU, em benchmark autovalidado.
+  \item Inferência de CNN quantizada em int8 (MNIST) em 1.506 ciclos (15~µs), com perda de 0,13 p.p. de acurácia na quantização e saídas bit a bit idênticas à emulação, validadas em Hardware-in-the-Loop.
 \end{itens}
 
 \vspace{7pt}

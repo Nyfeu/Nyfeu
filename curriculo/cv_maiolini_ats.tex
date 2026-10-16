@@ -33,7 +33,8 @@
   pdfauthor={André Solano Ferreira Rodrigues Maiolini},
   pdfsubject={Controle e Sistemas Dinâmicos},
   pdfkeywords={sistemas embarcados, controle, FPGA, VHDL, SystemVerilog,
-               elementos finitos, MATLAB, Simulink, C, C++, Python, RISC-V, FreeRTOS}
+               elementos finitos, MATLAB, Simulink, C, C++, Python, RISC-V, FreeRTOS,
+               arranjo sistólico, quantização int8}
 }
 
 % ---------- seções -------------------------------------------------
@@ -93,8 +94,8 @@ digitais, sistemas de tempo real, dinâmica e vibrações.\par
 experimentos (DoE), ANOVA, análise modal.\par
 \vspace{3pt}
 \textbf{Hardware digital e sistemas embarcados:} VHDL, SystemVerilog, FPGA
-(Xilinx Vivado, Nexys 4), ESP32, MSP430, FreeRTOS, RISC-V, UART, DMA,
-Hardware-in-the-Loop (HIL).\par
+(Xilinx Vivado, Nexys A7), ESP32, MSP430, FreeRTOS, RISC-V, UART, DMA,
+arranjo sistólico, quantização int8, Hardware-in-the-Loop (HIL).\par
 \vspace{3pt}
 \textbf{Programação e ferramentas:} MATLAB, Simulink, C, C++, Python, Rust, Flutter, Git,
 Linux, integração contínua (CI).\par
@@ -200,14 +201,14 @@ Inglês: intermediário.\par
         {2025 - 2026}
 \begin{itemize}
   \item Coprojeto de hardware/software de um sistema-em-chip (SoC) em
-        VHDL-2008, validado em FPGA Nexys 4: núcleo RV32I multiciclo,
-        acelerador em arranjo sistólico, DMA e interconexão crossbar.
-  \item Caracterização do gargalo de memória: vazão sustentada de 5,19
-        MACs/ciclo contra 16 teóricos, com 67,6\% de ociosidade; o DMA elevou a
-        eficiência de movimentação de dados em 31,01 vezes.
-  \item Validação em Hardware-in-the-Loop: host em Python treina e quantiza a
-        rede, transmite os pesos por UART a 921.600 bps e recebe da FPGA os
-        resultados de inferência e os contadores de desempenho.
+        VHDL-2008, validado em FPGA Nexys A7: núcleo RV32I multiciclo com
+        Zicsr, NPU em arranjo sistólico 4x4, DMA e interconexão crossbar.
+  \item Mitigação do gargalo de memória na NPU (pesos locais, im2col em
+        hardware, streaming, fusão de camadas e descritores): de 4,6 para 12,2
+        MACs úteis por ciclo, de 16 teóricos, e speedup de até 7.477 vezes.
+  \item Inferência de CNN int8 (MNIST) em 1.506 ciclos, com perda de 0,13 p.p.
+        de acurácia na quantização e saídas bit a bit idênticas à emulação, em
+        Hardware-in-the-Loop.
 \end{itemize}
 
 \espaco
