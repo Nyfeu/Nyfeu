@@ -203,12 +203,12 @@ Inglês: intermediário.\par
   \item Coprojeto de hardware/software de um sistema-em-chip (SoC) em
         VHDL-2008, validado em FPGA Nexys A7: núcleo RV32I multiciclo com
         Zicsr, NPU em arranjo sistólico 4x4, DMA e interconexão crossbar.
-  \item Mitigação do gargalo de memória na NPU (pesos locais, im2col em
-        hardware, streaming, fusão de camadas e descritores): de 4,6 para 12,2
-        MACs úteis por ciclo, de 16 teóricos, e speedup de até 7.477 vezes.
-  \item Inferência de CNN int8 (MNIST) em 1.506 ciclos, com perda de 0,13 p.p.
-        de acurácia na quantização e saídas bit a bit idênticas à emulação, em
-        Hardware-in-the-Loop.
+  \item Mitigação do gargalo de memória na NPU (pesos residentes, im2col em
+        hardware, streaming, sequenciamento de tiles, modo GEMV, fusão de
+        camadas e descritores): 12,2 MACs úteis por ciclo, com o arranjo em
+        computação 76\% do tempo.
+  \item Inferência de CNN int8 (MNIST) em 1.506 ciclos, com perda de 0,13 ponto
+        percentual de acurácia na quantização.
 \end{itemize}
 
 \espaco

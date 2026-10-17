@@ -229,8 +229,8 @@
 \bloco{Plataforma didática: SoC RISC-V com aceleração neural em FPGA}{Trabalho de conclusão de curso – Instituto Mauá de Tecnologia}{2025 – 2026}
 \begin{itens}
   \item Co-projeto de hardware/software de um sistema-em-chip em VHDL-2008, validado em FPGA Nexys A7: núcleo RV32I multiciclo com Zicsr, NPU em arranjo sistólico 4×4, DMA e interconexão crossbar.
-  \item Mitigação do gargalo de memória com mecanismos de movimentação de dados na NPU (pesos locais, im2col em hardware, streaming, fusão de camadas e descritores de camada): de 4,6 para 12,2 MACs úteis/ciclo, de 16 teóricos, com speedup de até 7.477x sobre a CPU, em benchmark autovalidado.
-  \item Inferência de CNN quantizada em int8 (MNIST) em 1.506 ciclos (15~µs), com perda de 0,13 p.p. de acurácia na quantização e saídas bit a bit idênticas à emulação, validadas em Hardware-in-the-Loop.
+  \item Mitigação do gargalo de memória por mecanismos de movimentação de dados e de controle na NPU: pesos residentes na memória local, im2col em hardware, streaming sobreposto ao cálculo, sequenciamento de tiles, modo GEMV para camadas densas, fusão de camadas e descritores de camada executados pela própria NPU. Resultado: 12,2 MACs úteis/ciclo, com o arranjo em computação 76\% do tempo.
+  \item Inferência de CNN quantizada em int8 (MNIST) em 1.506 ciclos (15~µs), com perda de 0,13 ponto percentual de acurácia na quantização e saídas bit a bit idênticas à emulação, validadas em Hardware-in-the-Loop.
 \end{itens}
 
 \vspace{7pt}
